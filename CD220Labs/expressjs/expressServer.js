@@ -19,16 +19,7 @@ app.post("/login/:name",(req,res)=>{
 app.get("/:name",(req,res)=>{
     res.send("Hello "+req.params.name)
 })
-//Nuevo endopoint
-app.get("/fetchMonth/:num", (req, res) => {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
-    let num = req.params.num;
-    if ( num <1 || num >12 ){
-        res.send("Invalid month number")
-    } else {
-        res.send(months[num -1])
-    }
-})
+
 
 app.listen(3333, () => {
     console.log(`Listening at http://localhost:3333`)
